@@ -1,0 +1,5 @@
+<launch>
+    <node name="turtle1_tf2_broadcaster" pkg="tf2_exercise" type="turtle_tf2_broadcaster.py">
+        <param name="turtle" type="string" value="turtle1/"/>
+    </node>
+</launch>

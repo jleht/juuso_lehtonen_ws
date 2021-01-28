@@ -11,23 +11,30 @@ def callback(data):
     print(pose.theta)
     if pose.x > 10:
         vel_msg.angular.z = random.randint(-5,0)
-        vel_msg.linear.x = 2
+        vel_msg.linear.x = 0
+        vel_msg.linear.y = 5
+
 
     elif pose.x < 1:
         vel_msg.angular.z = random.randint(-5,0)
-        vel_msg.linear.x = 2
+        vel_msg.linear.x = 0
+        vel_msg.linear.y = 5
 
     elif pose.y > 10:
         vel_msg.angular.z = random.randint(-5,0)
-        vel_msg.linear.x = 2
+        vel_msg.linear.x = 0
+        vel_msg.linear.y = 5
 
     elif pose.y < 1:
         vel_msg.angular.z = random.randint(-5,0)
-        vel_msg.linear.x = 2
+        vel_msg.linear.x = 0
+        vel_msg.linear.y = 5
     
     else:
         vel_msg.angular.z = 0
-        vel_msg.linear.x = 2
+        vel_msg.linear.x = 0
+        vel_msg.linear.y = 5
+
     velocity_publisher.publish(vel_msg)
 
 
