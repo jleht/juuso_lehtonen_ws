@@ -5,6 +5,6 @@
     <node pkg="turtlesim" type="turtle_teleop_key" name="turtle_teleop_key">
     </node>
 
-    <node pkg="autoturtle" type="randomwalk.py" name="randomwalk.py">
+    <node pkg="autoturtle" type="randomwalk.py" name="randomwalk">
     </node>
 </launch>
