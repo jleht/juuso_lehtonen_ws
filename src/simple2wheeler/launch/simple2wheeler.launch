@@ -3,8 +3,8 @@
         <arg name="gui" value="true"/>
         <arg name="world_name" value="$(find simple2wheeler)/world/simple2wheeler.world"/>
     </include>
-    <param name="robot_description" command="$(find xacro)xacro '$find(simple2wheeler)/urdf/simple2wheeler.xacro'"/>
+    <param name="robot_description" command="$(find xacro)xacro '$(find simple2wheeler)/urdf/simple2wheeler.xacro'"/>
 
-    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model simple2wheel"/>
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model simple2wheeler"/>
 
 </launch>
