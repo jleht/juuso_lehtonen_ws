@@ -6,5 +6,41 @@
     <param name="robot_description" command="$(find xacro)xacro '$(find simple2wheeler)/urdf/simple2wheeler.xacro'"/>
 
     <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model simple2wheeler"/>
+    <node pkg="turtlesim" type="turtle_teleop_key" name="cmd_vel_key">
+        <remap from="turtle1/cmd_vel" to="cmd_vel"/>
+    </node>
 
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"/>
+    <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher"/>
+
+
+    <node pkg="robot_localization" type="ekf_localization_node" name="robot_localization_ekf_node" clear_params="true">
+        <param name="frequency" value="10" />
+        <param name="sensor_timeout" value="0.2"/>
+        <param name="two_d_mode" value="true"/>
+        <param name="publish_tf" value="true"/>
+        <param name="map_frame" value="map"/>
+        <param name="odom_frame" value="odom"/>
+        <param name="base_link_frame" value="link_chassis"/>
+        <param name="world_frame" value="odom"/>
+        <param name="print_diagnostics" value="true"/>
+        <param name="odom0" value="/odom"/>
+        <param name="imu0" value="/imu"/>
+
+        <rosparam param="odom0_config">[true, true, false,
+                                        false, false, false,
+                                        true, true, false,
+                                        false, false, false,
+                                        false, false, false]</rosparam>
+
+        <rosparam param="imu0_config">[false, false, false,
+                                        true, true, true,
+                                        false, false, false,
+                                        true, true, true,
+                                        true, true, true,]</rosparam>
+        <param name="odom0_differential" value="false"/>
+        <param name="imu0_differential" value="false"/>
+
+        <!--x,y,z, roll, pitch, yaw,x*,y*,z*,roll*,pitch*,yaw*,x**,y**,z**-->        
+    </node>
 </launch>
