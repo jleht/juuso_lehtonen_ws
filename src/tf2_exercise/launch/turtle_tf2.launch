@@ -12,6 +12,16 @@
         <param name="turtle" type="string" value="turtle2"/>
     </node>
 
+    <node name="pose_stamped" pkg="tf2_exercise" type="pose_stamped.py">
+        <param name="turtle" type="string" value="turtle2"/>
+    </node>
+
+    <node name="turtle3_tf2_broadcaster" pkg="tf2_exercise" type="turtle_tf2_broadcaster.py" respawn="false" output="screen">
+        <param name="turtle" type="string" value="turtle3"/>
+    </node>
+
+    <node name="listener3" pkg="tf2_exercise" type="turtle3_listener.py" output="screen" />
+
     <node name="listener" pkg="tf2_exercise" type="turtle_tf2_listener.py" output="screen" />
     <node pkg="autoturtle" type="randomwalk.py" name="randomwalk"/>
 </launch>

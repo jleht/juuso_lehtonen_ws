@@ -30,5 +30,4 @@ if __name__ == "__main__":
     rospy.init_node('tf2_turtle_broadcaster')
     turtlename = rospy.get_param('~turtle')
     rospy.Subscriber('/%s/pose' % turtlename, turtlesim.msg.Pose, handle_turtle_pose, turtlename)
-
     rospy.spin()

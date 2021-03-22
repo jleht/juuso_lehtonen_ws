@@ -47,7 +47,7 @@ def callback(data):
         vel_msg.linear.x = 1
         print("h")
     else:
-        vel_msg.linear.x = 6
+        vel_msg.linear.x = 2
         vel_msg.angular.z = random.uniform(-4,4)
         print("else")
 
