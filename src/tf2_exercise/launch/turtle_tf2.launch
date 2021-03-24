@@ -12,7 +12,7 @@
         <param name="turtle" type="string" value="turtle2"/>
     </node>
 
-    <node name="pose_stamped" pkg="tf2_exercise" type="pose_stamped.py">
+    <node name="pose_stamped" pkg="tf2_exercise" type="pose_stamped.py" output="screen">
         <param name="turtle" type="string" value="turtle2"/>
     </node>
 
