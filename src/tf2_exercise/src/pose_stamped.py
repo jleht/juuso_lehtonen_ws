@@ -45,10 +45,10 @@ if __name__ == '__main__':
             continue
         rospy.Subscriber('turtle2/pose',turtlesim.msg.Pose,callback)
         if trans.transform.translation.x > -0.2 and trans.transform.translation.x < 0.2\
-            and trans.transform.translation.y > -0.2 and trans.transform.translation.x < 0.2:
+            and trans.transform.translation.y > -0.2 and trans.transform.translation.y < 0.2:
             print("Warning! Turtle2 is close to turtle1")
         if trans2.transform.translation.x > -0.2 and trans2.transform.translation.x < 0.2\
-            and trans2.transform.translation.y > -0.2 and trans2.transform.translation.x < 0.2:
+            and trans2.transform.translation.y > -0.2 and trans2.transform.translation.y < 0.2:
             print("Warning! Turtle3 is close to turtle1, stopping turtle1")
             subprocess.call(["rosnode", "kill", "/randomwalk"]) #There is probably a better way to do this by killing the node with some rospy method?
 
